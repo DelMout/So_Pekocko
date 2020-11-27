@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const User = require('../Models/User');
 const jwt = require('jsonwebtoken');
 
+//CREATION NOUVEL UTILISATEUR
 //cryptage du password et sauvegarde dans BdD
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)

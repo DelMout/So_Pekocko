@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\backend",
-    "\\backend\\Controllers",
-    "\\backend\\images",
-    "\\backend\\Models",
+    "\\backend\\Routes",
     "\\frontend",
     "\\frontend\\src",
     "\\frontend\\src\\app",
-    "\\frontend\\src\\app\\services"
+    "\\frontend\\src\\app\\single-sauce",
+    "\\frontend\\src\\assets",
+    "\\frontend\\src\\assets\\images",
+    "\\frontend\\src\\environments"
   ],
-  "SelectedNode": "\\backend\\Controllers\\sauce.js",
+  "SelectedNode": "\\backend\\Controllers\\user.js",
   "PreviewInSolutionExplorer": false
 }

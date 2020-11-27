@@ -8,7 +8,7 @@ const path = require('path');
 
 
 //Connection à la base de données MongoDB
-mongoose.connect('mongodb+srv://Delph:delf4949@cluster0.ewlyb.mongodb.net/<dbname>?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://User2:blabla@cluster0.ki5qr.mongodb.net/?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -45,3 +45,7 @@ app.use('/api/auth/signup', (req, res, next) => {
     res.json({ message: 'Votre requete a bien ete recue !' });
 });
 module.exports = app;
+
+
+
+

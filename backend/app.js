@@ -4,11 +4,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRoutes = require('./Routes/user');
 const sauceRoutes = require('./Routes/sauce');
+const cors = require('cors');
 const path = require('path');
+const helmet = require('helmet');
+const app = express();
 
 
 //Connection à la base de données MongoDB
-mongoose.connect('mongodb+srv://User2:blabla@cluster0.ki5qr.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://'+process.env.USER+':'+process.env.PASSWORD+'@cluster0.ki5qr.mongodb.net/?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -16,18 +19,14 @@ mongoose.connect('mongodb+srv://User2:blabla@cluster0.ki5qr.mongodb.net/?retryWr
     .then(() => console.log('Connexion a MongoDB reussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-const app = express();
+
 
 //Securité CORS
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    next();
-});
+app.use(cors());
 
 
 app.use(bodyParser.json());
+app.use(helmet());
 
 // Images
 app.use('/images', express.static(path.join(__dirname, 'images')));

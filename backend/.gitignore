@@ -2,3 +2,5 @@ node_modules
 
 # pour ne pas versionner le dossier images
 # **/images/
+
+.env

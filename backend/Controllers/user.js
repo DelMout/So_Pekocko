@@ -2,6 +2,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../Models/User');
 const jwt = require('jsonwebtoken');
+const sha1 = require('sha1');
 
 //CREATION NOUVEL UTILISATEUR
 //cryptage du password et sauvegarde dans BdD
@@ -9,7 +10,7 @@ exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
             const user = new User({
-                email: req.body.email,
+                email: sha1(req.body.email),
                 password: hash
             });
             user.save()
@@ -21,7 +22,7 @@ exports.signup = (req, res, next) => {
 
 // vérification que le user est dans la BdD - vérif mot de passe
 exports.login = (req, res, next) => {
-    User.findOne({ email: req.body.email })
+    User.findOne({ email: sha1(req.body.email) })
         .then(user => {
             if (!user) {
                 return res.status(401).json({ error: 'Utilisateur non trouvé !' });

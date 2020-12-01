@@ -103,10 +103,15 @@ exports.likeSauce = (req, res, next) => {
 
             if ((dejaUserLike >= 0 && like===1)|| (dejaUserDislike >= 0 && like===-1) || userIdLike === userSauce) {     // User a déjà liké !
                 console.log("t as deja (dis)liké ou tu es créateur de la sauce");
+               
                 Sauce.findOne({ _id: req.params.id })
                     .then(() => res.status(200).json({ message: 'Pas de modification car déjà (dis)liké ou tu as créé cette sauce !' }))
                     .catch(error => res.status(400).json({ error }));
 
+                
+               
+                //return res.status(401).json({ error: 'Déjà (dis)liké ou Créateur de cette sauce !' });
+                
 
             } else if (like === 1 && dejaUserLike === -1 && userIdLike !== userSauce) {   // Si user pas deja dans tableau Users(dis)Like et si différent du créateur sauce
                 Sauce.updateOne(

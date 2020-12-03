@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\backend",
+    "\\backend\\Controllers",
+    "\\frontend",
     "\\frontend\\src",
     "\\frontend\\src\\app",
-    "\\frontend\\src\\app\\auth",
-    "\\frontend\\src\\app\\auth\\login",
-    "\\frontend\\src\\app\\auth\\signup",
-    "\\frontend\\src\\app\\header",
-    "\\frontend\\src\\app\\interceptors",
-    "\\frontend\\src\\app\\services"
+    "\\frontend\\src\\app\\models",
+    "\\frontend\\src\\app\\sauce-form",
+    "\\frontend\\src\\app\\sauce-list",
+    "\\frontend\\src\\app\\single-sauce"
   ],
-  "SelectedNode": "\\backend\\app.js",
+  "SelectedNode": "\\backend\\Controllers\\user.js",
   "PreviewInSolutionExplorer": false
 }

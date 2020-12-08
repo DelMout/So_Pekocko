@@ -51,8 +51,6 @@ exports.modifySauce = (req, res, next) => {
             .then(
                 (sauce) => {
                     const filename = sauce.imageUrl.split('/images/')[1];
-                    console.log("sauce.userId = " + sauce.userId);
-                    console.log("filename 2 = " + filename);
                     fs.unlink(`images/${filename}`, () => {
                         Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
                             .then(() => {

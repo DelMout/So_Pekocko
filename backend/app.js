@@ -13,6 +13,7 @@ const app = express();
 
 //Connection to database MongoDB
 mongoose.connect('mongodb+srv://' + process.env.USER + ':' + process.env.PASSWORD + '@cluster0.ki5qr.mongodb.net/?retryWrites=true&w=majority',
+
     {
         useNewUrlParser: true,
         useUnifiedTopology: true

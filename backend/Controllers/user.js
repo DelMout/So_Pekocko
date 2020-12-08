@@ -27,8 +27,6 @@ exports.signup = (req, res, next) => {
     }
     bcrypt.hash(req.body.password, 10)
         .then(hashPassword => {
-            console.log("email : " + search.isEmailAddress(req.body.email));
-            console.log("position $ : " + req.body.email.indexOf("$"));
             if (!search.isEmailAddress(req.body.email) || req.body.email.indexOf("$") === 0) {   // Email commencing by  par '.' excluded in regex-collection OR email commencing by '$'
                 return res.status(401).json({ error: 'Email nonauthorized !' });
             }

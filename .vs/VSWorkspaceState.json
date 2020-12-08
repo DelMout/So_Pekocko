@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\backend",
-    "\\backend\\Controllers",
-    "\\backend\\Middleware",
-    "\\backend\\Models",
-    "\\backend\\Routes"
+    "\\backend\\Controllers"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\backend\\Controllers\\user.js",
   "PreviewInSolutionExplorer": false
 }

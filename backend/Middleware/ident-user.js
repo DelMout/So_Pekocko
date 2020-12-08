@@ -12,8 +12,6 @@ module.exports = (req, res, next) => {
                     const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
                     const userConnected = decodedToken.userId;
                     const userCreator = sauce.userId;
-                    console.log("Creator = " + userCreator);
-                    console.log("userConnected = " + userConnected);
                     if (userConnected !== userCreator) {
                         throw 'Connected user is not the sauce creator';
                     } else {

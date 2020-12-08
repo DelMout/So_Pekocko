@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');// Seulement email unique possible dans BdD
+const mongoose = require('mongoose');   // Tool for exchanging datas with MongoDB
+const uniqueValidator = require('mongoose-unique-validator');// Only ONE email possible in database
 
 const userSchema = mongoose.Schema({
     email: { type: String, required: true,unique:true },

@@ -3,13 +3,9 @@
     "",
     "\\backend",
     "\\backend\\Controllers",
-    "\\frontend",
-    "\\frontend\\src",
-    "\\frontend\\src\\app",
-    "\\frontend\\src\\app\\models",
-    "\\frontend\\src\\app\\sauce-form",
-    "\\frontend\\src\\app\\sauce-list",
-    "\\frontend\\src\\app\\single-sauce"
+    "\\backend\\Middleware",
+    "\\backend\\Models",
+    "\\backend\\Routes"
   ],
   "SelectedNode": "\\backend\\Controllers\\user.js",
   "PreviewInSolutionExplorer": false

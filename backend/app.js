@@ -5,45 +5,34 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRoutes = require('./Routes/user');
 const sauceRoutes = require('./Routes/sauce');
-const cors = require('cors');
+const cors = require('cors');       //Security CORS
 const path = require('path');
-const helmet = require('helmet');
+const helmet = require('helmet');       // Protect HTTP headers
 const app = express();
 
 
-//Connection à la base de données MongoDB
-mongoose.connect('mongodb+srv://'+process.env.USER+':'+process.env.PASSWORD+'@cluster0.ki5qr.mongodb.net/?retryWrites=true&w=majority',
+//Connection to database MongoDB
+mongoose.connect('mongodb+srv://' + process.env.USER + ':' + process.env.PASSWORD + '@cluster0.ki5qr.mongodb.net/?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    .then(() => console.log('Connexion a MongoDB reussie !'))
-    .catch(() => console.log('Connexion à MongoDB échouée !'));
+    .then(() => console.log('Connection on MongoDB done !'))
+    .catch(() => console.log('Connection on MongoDB failed !'));
 
-
-
-//Securité CORS
 app.use(cors());
-
-
 app.use(bodyParser.json());
 app.use(helmet());
 
 // Images
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-
-// Inscription nouveau user
+// User
 app.use('/api/auth', userRoutes);
 
-// les Sauces
+// Sauces
 app.use('/api/sauces', sauceRoutes);
 
-
-// Voir si la requête est bien exécutée
-app.use('/api/auth/signup', (req, res, next) => {
-    res.json({ message: 'Votre requete a bien ete recue !' });
-});
 module.exports = app;
 
 

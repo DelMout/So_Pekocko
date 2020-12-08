@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+// Stop warnings during connection on MongoDB
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useNewUrlParser', true);
+
 const sauceSchema = mongoose.Schema({
     userId: { type: String, required: true },
     name: { type: String, required: true },

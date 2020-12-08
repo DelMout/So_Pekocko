@@ -1,6 +1,7 @@
 node_modules
 
-# pour ne pas versionner le dossier images
+# Do not export repertory images
 # **/images/
 
+* Do not export .env
 .env

@@ -126,7 +126,7 @@ exports.likeSauce = (req, res, next) => {
                     .then(() => res.status(200).json({ message: 'Sauce disliked !' }))
                     .catch(error => res.status(400).json({ error }));
 
-            } else if (like === 0 && (formerUserLike > -1 || formerUserDislike > -1)) {
+            } else if (like === 0) {
                 if (formerUserLike > -1) {    // User has already liked
                     Sauce.updateOne(
                         { _id: req.params.id },

@@ -7,7 +7,7 @@ is an API for tasting sauces. This API is a MVP. Project 6 in OpenClassrooms web
 - Mongo
 
 
-* Compétences évaluées
+# Compétences évaluées
 - Mettre en œuvre des opérations CRUD de manière sécurisée
 - Stocker des données de manière sécurisée
 - Implémenter un modèle logique de données conformément à la réglementation
